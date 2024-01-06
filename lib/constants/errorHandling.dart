@@ -1,25 +1,27 @@
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:ruth_and_jerry/constants/utility.dart';
 
-void httpErrHandling ({
+void httpErrHandling({
   required http.Response response,
   required BuildContext context,
   required VoidCallback onSuccess,
 }) {
-  switch(response.statusCode) {
+  switch (response.statusCode) {
     case 200:
-    onSuccess();
-    break;
+      onSuccess();
+      break;
     case 400:
       showSnackBar(context, jsonDecode(response.body)['msg']);
       break;
     case 500:
-    showSnackBar(context, jsonDecode(response.body)['error']);
-    break;
+      showSnackBar(context, jsonDecode(response.body)['error']);
+      break;
     default:
-    showSnackBar(context, response.body);
+      showSnackBar(context, response.body);
   }
 }

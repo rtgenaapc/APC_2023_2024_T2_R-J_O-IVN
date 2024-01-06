@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'signup.dart';
-import 'package:ruth_and_jerry/constants/global_variable.dart';
 import 'package:ruth_and_jerry/reusableWidgets/custom_bttn.dart';
+import 'signup.dart';
+// ignore: unused_import
+import 'package:ruth_and_jerry/constants/global_variable.dart';
 import 'package:ruth_and_jerry/reusableWidgets/custom_textField.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,13 +21,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void handleSignIn() {
     // Implement your sign-in logic here
+    // ignore: avoid_print
     print('Sign in logic goes here');
   }
 
   void navigateToSignUpScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => SignUpScreen()),
+      MaterialPageRoute(builder: (context) => const SignUpScreen()),
     );
   }
 

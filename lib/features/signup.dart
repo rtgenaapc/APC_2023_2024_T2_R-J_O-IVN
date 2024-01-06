@@ -1,9 +1,10 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 import 'package:ruth_and_jerry/features/login.dart';
 import 'package:ruth_and_jerry/reusableWidgets/custom_bttn.dart';
 import 'package:ruth_and_jerry/reusableWidgets/custom_textField.dart';
 import 'package:ruth_and_jerry/services/auth_service.dart';
-
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -21,20 +22,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   void signUpUser() {
-    authService.signUpUser(context: context,
-    User_Email: _emailController.text,
-    User_Password: _passwordController.text,
-    User_Name: _nameController.text,
+    authService.signUpUser(
+      context: context,
+      User_Email: _emailController.text,
+      User_Password: _passwordController.text,
+      User_Name: _nameController.text,
     );
   }
 
   void navigateToLoginScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -69,23 +70,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       controller: _passwordController,
                       hintText: 'Password',
                     ),
-
                     const SizedBox(height: 10),
-                    CustomBttn(text: 'Register',
-                    onTap: () {
-                      if(_signUpFormKey.currentState!.validate()) {
-                        signUpUser();
-                      }
-                      else{
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Please fix the errors in the form.'),
-                          duration: Duration(seconds: 2),
-                          ),
-                          );
-
-                      }
-                    }),
-
+                    CustomBttn(
+                        text: 'Register',
+                        onTap: () {
+                          if (_signUpFormKey.currentState!.validate()) {
+                            signUpUser();
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: const Text(
+                                    'Please fix the errors in the form.'),
+                                duration: Duration(seconds: 2),
+                              ),
+                            );
+                          }
+                        }),
                     const SizedBox(height: 10),
                     CustomBttn(
                       text: 'Already have an account?',

@@ -17,28 +17,28 @@ class RegistrationScreen extends StatelessWidget {
           children: [
             const Text('Create an Account'),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Registration Form Fields
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Full Name',
                 border: OutlineInputBorder(),
               ),
             ),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Email',
                 border: OutlineInputBorder(),
               ),
             ),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
-            TextField(
+            const TextField(
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Password',
@@ -46,7 +46,7 @@ class RegistrationScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Registration Button
             ElevatedButton(

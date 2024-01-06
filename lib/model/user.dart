@@ -1,6 +1,10 @@
+// ignore_for_file: non_constant_identifier_names, duplicate_ignore
+
 import 'dart:convert';
 
+// ignore: camel_case_types
 class users {
+  // ignore: non_constant_identifier_names
   final String User_Id;
   final String User_Name;
   final String User_Password;

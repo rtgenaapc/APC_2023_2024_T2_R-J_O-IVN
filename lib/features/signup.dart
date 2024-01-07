@@ -30,6 +30,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
+  void signinUser() {
+    authService.signinUser(
+      context: context,
+      User_Email: _emailController.text,
+      User_Password: _passwordController.text,
+    );
+  }
+
   void navigateToLoginScreen() {
     Navigator.push(
       context,

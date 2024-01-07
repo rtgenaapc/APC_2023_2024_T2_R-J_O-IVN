@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types, non_constant_identifier_names, use_build_context_synchronously
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:ruth_and_jerry/constants/errorHandling.dart';
 import 'package:ruth_and_jerry/constants/global_variable.dart';
@@ -41,6 +43,30 @@ class auth_Service {
               'Successfully registered. ',
             );
           });
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
+  }
+
+  //signin
+  void signinUser({
+    required BuildContext context,
+    required String User_Email,
+    required String User_Password,
+  }) async {
+    try {
+      http.Response res = await http.post(
+        Uri.parse('$uri/api/signup'),
+        body: jsonEncode({
+          'User_Email': User_Email,
+          'User_Password': User_Password,
+        }),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF',
+        },
+      );
+      print(res.body);
+      httpErrHandling(response: res, context: context, onSuccess: () {});
     } catch (e) {
       showSnackBar(context, e.toString());
     }

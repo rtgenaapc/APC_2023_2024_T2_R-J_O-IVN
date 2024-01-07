@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names, use_build_context_synchronously
+// ignore_for_file: camel_case_types, non_constant_identifier_names, use_build_context_synchronously, avoid_print, unused_import
 
 import 'dart:convert';
 
@@ -8,6 +8,7 @@ import 'package:ruth_and_jerry/constants/global_variable.dart';
 import 'package:ruth_and_jerry/constants/utility.dart';
 import 'package:ruth_and_jerry/model/user.dart';
 import 'package:http/http.dart' as http;
+import 'package:ruth_and_jerry/providers/user_provider.dart';
 
 class auth_Service {
   void signUpUser({
@@ -66,9 +67,27 @@ class auth_Service {
         },
       );
       print(res.body);
-      httpErrHandling(response: res, context: context, onSuccess: () {});
+      httpErrHandling(
+          response: res,
+          context: context,
+          onSuccess: () async {
+            final SharedPreferences prefs =
+                await SharedPreferences.getInstance();
+            Provider.of(context, listen: false).setUser(res.body);
+            await prefs.setString(
+                'x-auth-token', jsonDecode(res.body)['token']);
+          });
     } catch (e) {
       showSnackBar(context, e.toString());
     }
   }
+}
+
+class Provider {
+  static of(BuildContext context, {required bool listen}) {}
+}
+
+mixin SharedPreferences {
+  static getInstance() {}
+  setString(String s, jsonDecode) {}
 }

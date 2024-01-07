@@ -2,6 +2,7 @@ const express = require("express");
 const User = require("../models/users");
 const bcryptjs = require ('bcryptjs');
 const authRouter = express.Router();
+const jwt = require('jsonwebtoken');
 
 
 //Sign up
@@ -17,6 +18,21 @@ authRouter.post('/api/signup', async (req, res) => {
         } 
 
         const hashedPassword = await bcryptjs.hash(User_Password, 8);
+        // How about the incorrect password?
+
+        const isMatch = await bcryptjs.compare(User_Password, hashedPassword);
+        if (!isMatch) {
+            return res.status(400).json({ msg: 'Incorrect password.' });
+        }
+
+        const token = jwtsign = jwt.sign({ id: userExisting._id }, "passwordKey");
+        res.json(token, ...user._doc);
+
+        // {
+            // token: "asdasda"
+        //     "User_Email": "test@gmail",
+        //     "User_Password": "test",
+        // }
 
         let user = new User({
             User_Email,

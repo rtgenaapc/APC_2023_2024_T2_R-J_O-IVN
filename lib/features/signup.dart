@@ -48,14 +48,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 84, 234, 84),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Welcome to Sign Up',
+              'Sign-Up',
               style: TextStyle(
                 fontSize: 22,
+                fontWeight: FontWeight.bold
               ),
             ),
             Container(
@@ -66,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     CustomTextField(
                       controller: _nameController,
-                      hintText: 'Name/Username',
+                      hintText: 'Name',
                     ),
                     const SizedBox(height: 10),
                     CustomTextField(
@@ -80,7 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     const SizedBox(height: 10),
                     CustomBttn(
-                        text: 'Register',
+                        text: 'SIGN UP',
                         onTap: () {
                           if (_signUpFormKey.currentState!.validate()) {
                             signUpUser();

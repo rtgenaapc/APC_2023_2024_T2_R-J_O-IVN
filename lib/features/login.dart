@@ -35,14 +35,23 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 84, 234, 84),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Welcome to Login',
+              'Welcome!',
               style: TextStyle(
                 fontSize: 22,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            const Text(
+              'Lets get you started.',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500
               ),
             ),
             Container(
@@ -61,12 +70,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       hintText: 'Password',
                     ),
                     const SizedBox(height: 10),
-                    CustomBttn(text: 'Sign in', onTap: handleSignIn),
+                    CustomBttn(text: 'LOG IN', onTap: handleSignIn),
                     const SizedBox(height: 10),
-                    // Register button to navigate to SignUpScreen
+                    // SIGN UP button to navigate to SignUpScreen
                     CustomBttn(
                       onTap: navigateToSignUpScreen,
-                      text: 'Register',
+                      text: 'SIGN UP',
                     ),
                   ],
                 ),

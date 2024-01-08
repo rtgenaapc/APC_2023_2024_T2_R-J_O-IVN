@@ -6,7 +6,7 @@ const authRouter = require ("./routes/auth")//Like features
 
 const PORT = 3000;
 const app = express();
-const DB = "mongodb+srv://rtgena:REINERGENA@cluster0.uezpndj.mongodb.net/?retryWrites=true&w=majority"
+const DB = "mongodb+srv://rtgena:rtgena@pbl.tope87w.mongodb.net/"
 
 //middleware
 app.use(express.json())

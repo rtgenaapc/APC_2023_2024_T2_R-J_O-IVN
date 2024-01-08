@@ -9,18 +9,18 @@ abstract class BottomBar extends StatelessWidget {
   const BottomBar({Key? key}) : super(key: key);
 }
 
-class _BottomBarState extends State<BottomBar> {
+class _BottomBarState extends State<StatefulWidget> {
   final int _page = 0;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page,
         selectedItemColor: GlobalVar.selectedNavBarColor,
         unselectedItemColor: GlobalVar.selectedNavBarColor,
         backgroundColor: GlobalVar.backgroundColor,
         iconSize: 30,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

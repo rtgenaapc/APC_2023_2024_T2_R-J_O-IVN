@@ -52,7 +52,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: [Image.asset('lib/features/assets/OMG_LOGO.png'),
             const Text(
               'Sign-Up',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),

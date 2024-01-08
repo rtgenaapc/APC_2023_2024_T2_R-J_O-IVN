@@ -65,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     CustomTextField(
                       controller: _nameController,
-                      hintText: 'Name',
+                      hintText: 'Full Name',
                     ),
                     const SizedBox(height: 10),
                     CustomTextField(

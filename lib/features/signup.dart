@@ -79,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     const SizedBox(height: 10),
                     CustomBttn(
-                        text: 'SIGN UP',
+                        text: 'Create Account',
                         onTap: () {
                           if (_signUpFormKey.currentState!.validate()) {
                             signUpUser();

@@ -30,8 +30,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  void signinUser() {
-    authService.signinUser(
+  void loginUser() {
+    authService.loginUser(
       context: context,
       User_Email: _emailController.text,
       User_Password: _passwordController.text,

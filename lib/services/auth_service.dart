@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:ruth_and_jerry/constants/errorHandling.dart';
 import 'package:ruth_and_jerry/constants/global_variable.dart';
 import 'package:ruth_and_jerry/constants/utility.dart';
+import 'package:ruth_and_jerry/features/home/homepage.dart';
 import 'package:ruth_and_jerry/model/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:ruth_and_jerry/providers/user_provider.dart';
@@ -49,8 +50,9 @@ class auth_Service {
     }
   }
 
-  //signin
-  void signinUser({
+  //login
+
+  void loginUser({
     required BuildContext context,
     required String User_Email,
     required String User_Password,
@@ -76,6 +78,7 @@ class auth_Service {
             Provider.of(context, listen: false).setUser(res.body);
             await prefs.setString(
                 'x-auth-token', jsonDecode(res.body)['token']);
+              Navigator.pushNamedAndRemoveUntil(context, HomeScreen.routeName, (route) => false,);
           });
     } catch (e) {
       showSnackBar(context, e.toString());

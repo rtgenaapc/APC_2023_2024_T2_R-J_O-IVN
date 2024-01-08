@@ -25,15 +25,10 @@ authRouter.post('/api/signup', async (req, res) => {
             return res.status(400).json({ msg: 'Incorrect password.' });
         }
 
-        const token = jwtsign = jwt.sign({ id: userExisting._id }, "passwordKey");
+        const token = jwtsign = jwt.sign({ id: userExisting._id }, "Password Key");
         res.json(token, ...user._doc);
 
-        // {
-            // token: "asdasda"
-        //     "User_Email": "test@gmail",
-        //     "User_Password": "test",
-        // }
-
+   
         let user = new User({
             User_Email,
             User_Password: hashedPassword,
@@ -59,7 +54,7 @@ authRouter.get('/api/signup', async (req, res) => {
 
         let user = new User({
             User_Email,
-            User_Password,
+            User_Password: user,
             User_Name,
         });
 
@@ -70,5 +65,6 @@ authRouter.get('/api/signup', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 module.exports = authRouter;

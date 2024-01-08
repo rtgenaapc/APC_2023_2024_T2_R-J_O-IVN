@@ -18,8 +18,8 @@ class _BottomBarState extends State<StatefulWidget> {
         currentIndex: _page,
         selectedItemColor: GlobalVar.selectedNavBarColor,
         unselectedItemColor: GlobalVar.selectedNavBarColor,
-        backgroundColor: GlobalVar.backgroundColor,
-        iconSize: 30,
+        backgroundColor: const Color.fromARGB(255, 225, 40, 40),
+        iconSize: 28,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

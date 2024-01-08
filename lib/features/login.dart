@@ -40,6 +40,8 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset('lib/features/assets/OMG_LOGO.png'),
+            // Other widgets...
             const Text(
               'Welcome!',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),

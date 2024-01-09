@@ -1,10 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:ruth_and_jerry/constants/global_variable.dart';
 import 'package:ruth_and_jerry/features/login.dart';
 import 'package:ruth_and_jerry/route.dart';
 
 void main() {
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ruth_and_jerry',
+      title: 'Ruth And Jerry',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVar.backgroundColor,
         colorScheme: const ColorScheme.light(

@@ -33,7 +33,7 @@ class auth_Service {
         Uri.parse('$uri/api/signup'),
         body: user.toJson(),
         headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF',
+          'Content-Type': 'application/json; charset=UTF-8',
         },
       );
       httpErrHandling(
@@ -65,7 +65,7 @@ class auth_Service {
           'User_Password': User_Password,
         }),
         headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF',
+          'Content-Type': 'application/json; charset=UTF-8',
         },
       );
       print(res.body);
@@ -75,7 +75,7 @@ class auth_Service {
           onSuccess: () async {
             final SharedPreferences prefs =
                 await SharedPreferences.getInstance();
-            Provider.of(context, listen: false).setUser(res.body);
+            Provider.of<UserProvider>(context, listen: false).setUser(res.body);
             await prefs.setString(
                 'x-auth-token', jsonDecode(res.body)['token']);
               Navigator.pushNamedAndRemoveUntil(context, HomeScreen.routeName, (route) => false,);

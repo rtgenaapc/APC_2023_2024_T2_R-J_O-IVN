@@ -7,15 +7,17 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State <HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class  _HomeScreenState extends State <HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-   final user = Provider.of<UserProvider>(context).user;
+    final user = Provider.of<UserProvider>(context).user;
     return Scaffold(
-      body: Center (child:Text(user.toJson()),),
+      body: Center(
+        child: Text(user.toJson()),
+      ),
     );
   }
-} //
+}

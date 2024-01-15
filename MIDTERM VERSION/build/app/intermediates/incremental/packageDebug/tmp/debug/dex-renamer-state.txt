@@ -1,0 +1,4 @@
+#Mon Jan 08 14:12:38 PST 2024
+base.0=C\:\\Users\\rtgen\\Documents\\Github\\APC_2023_2024_T2_R-J_O-IVN\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

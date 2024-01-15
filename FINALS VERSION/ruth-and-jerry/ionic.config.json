@@ -1,5 +1,7 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
+  "name": "ruth-and-jerry",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular-standalone"
 }

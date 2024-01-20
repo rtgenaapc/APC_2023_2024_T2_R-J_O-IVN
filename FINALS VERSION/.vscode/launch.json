@@ -1,0 +1,12 @@
+{
+    "configurations": [
+
+    {
+        "name": "Launch Edge",
+        "request": "launch",
+        "type": "msedge",
+        "url": "file:///C:/Users/kimal/Documents/APC_2023_2024_T2_R-J_O-IVN/FINALS%20VERSION/ruth-and-jerry/src/index.html",
+        "webRoot": "${workspaceFolder}"
+    }
+    ]
+}
